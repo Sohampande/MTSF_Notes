@@ -1,0 +1,8 @@
+#api 
+api_keys/
+
+#data
+data/
+
+#env
+.venv/
