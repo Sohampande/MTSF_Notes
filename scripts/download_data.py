@@ -189,11 +189,6 @@ def download_bixi_bike(username=None, key=None):
     dataset_details = DATASETS["Montreal Bixi Bike Data"]
     download_kaggle_dataset(dataset_details, username, key, competition=False)
 
-def download_london_smart_meters(username=None, key=None):
-    logger.info("Downloading London Smart Meters Dataset...")
-    dataset_details = DATASETS["London Smart Meters"]
-    download_kaggle_dataset(dataset_details, username, key, competition=False)
-
 def download_sunspot():
     logger.info("Downloading Sunspot Dataset...")
     dataset_details = DATASETS["Sunspot"]
