@@ -1,8 +1,15 @@
-#api 
+# api keys
 api_keys/
 
-#data
+# data
 data/
 
-#env
+# environments
 .venv/
+
+# macOS
+.DS_Store
+
+# Jupyter / Python
+.ipynb_checkpoints/
+__pycache__/
