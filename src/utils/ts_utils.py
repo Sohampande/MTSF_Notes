@@ -33,12 +33,12 @@ import pandas as pd
 def _remove_nan_union(array_a: np.ndarray,
                       array_b: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
     """
-    Returns the two inputs arrays where all elements are deleted that have an index that corresponds to
-    a NaN value in either of the two input arrays.
+    Returns the two input arrays with every element removed where either array is NaN.
     """
-
-    isnan_mask = np.logical_or(np.isnan(array_a), np.isnan(array_b))
-    return np.delete(array_a, isnan_mask), np.delete(array_b, isnan_mask)
+    array_a = np.ravel(array_a)
+    array_b = np.ravel(array_b)
+    keep = ~(np.isnan(array_a) | np.isnan(array_b))
+    return array_a[keep], array_b[keep]
 
 def forecast_bias(actual_series: Union[TimeSeries, Sequence[TimeSeries], np.ndarray],
         pred_series: Union[TimeSeries, Sequence[TimeSeries], np.ndarray],
